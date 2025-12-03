@@ -89,6 +89,9 @@
         }
     </script>
 
+    <!-- AlpineJS Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -100,7 +103,7 @@
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, rgb(22, 61, 66, 0.5) 0%, rgb(253, 200, 44, 0.75) 100%);
+            background: linear-gradient(175deg, rgb(253, 200, 44, 0.75) 0%, rgb(22, 61, 66, 0.5) 100%)
         }
 
         .parallax-section {
@@ -136,8 +139,8 @@
                     <a href="contact.html"
                         class="text-almartext hover:text-ocean-600 transition-colors font-medium">Contato</a>
                 </div>
-                <a href="#booking"
-                    class="bg-sunrise-500 hover:bg-sunrise-600 text-white px-4 md:px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-sm md:text-base">
+                <a href="#booking" id="bookbtn"
+                    class="bg-almar hover:bg-sunrise-600 text-white px-4 md:px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-sm md:text-base">
                     Reserva
                 </a>
             </div>
@@ -147,9 +150,105 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-            <img src="assets/images/heroimg.webp"
-                alt="Beautiful beach resort in Maragogi with palm trees and turquoise waters"
-                class="w-full h-full object-cover" loading="eager" />
+            <!-- <img src="assets/images/heroimg1.jpg"
+                alt="Lindo resort de praia em Maragogi com palmeiras e águas turquesa."
+                class="w-full h-full object-cover" loading="eager" /> -->
+            <div x-data="{            
+                autoplayIntervalTime: 3000,
+                slides: [                
+                    {
+                        imgSrc: 'assets/images/heroimg1.jpg',
+                        imgAlt: 'Lindo resort de praia em Maragogi com palmeiras e águas turquesa.',
+                    },                
+                    {                    
+                        imgSrc: 'assets/images/heroimg2.jpg',
+                        imgAlt: 'Lindo resort de praia em Maragogi com palmeiras e águas turquesa.',  
+                    },                
+                    {                    
+                        imgSrc: 'assets/images/heroimg3.jpg',
+                        imgAlt: 'Lindo resort de praia em Maragogi com palmeiras e águas turquesa.',  
+                    },            
+                ],            
+                currentSlideIndex: 1,
+                isPaused: false,
+                autoplayInterval: null,
+                previous() {                
+                    if (this.currentSlideIndex > 1) {                    
+                        this.currentSlideIndex = this.currentSlideIndex - 1                
+                    } else {   
+                        this.currentSlideIndex = this.slides.length                
+                    }            
+                },            
+                next() {                
+                    if (this.currentSlideIndex < this.slides.length) {                    
+                        this.currentSlideIndex = this.currentSlideIndex + 1                
+                    } else {                 
+                        this.currentSlideIndex = 1                
+                    }            
+                },    
+                autoplay() {
+                    this.autoplayInterval = setInterval(() => {
+                        if (! this.isPaused) {
+                            this.next()
+                        }
+                    }, this.autoplayIntervalTime)
+                },
+                setAutoplayInterval(newIntervalTime) {
+                    clearInterval(this.autoplayInterval)
+                    this.autoplayIntervalTime = newIntervalTime
+                    this.autoplay()
+                },    
+            }" x-init="autoplay" class="relative h-full w-full overflow-hidden">
+
+                <!-- slides -->
+                <!-- Change min-h-[50svh] to your preferred height size -->
+                <div class="relative h-full w-full">
+                    <template x-for="(slide, index) in slides">
+                        <div x-show="currentSlideIndex == index + 1" class="absolute inset-0"
+                            x-transition.opacity.duration.1000ms>
+                            <img class="absolute w-full h-full inset-0 object-cover text-on-surface dark:text-on-surface-dark"
+                                x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
+                        </div>
+                    </template>
+                </div>
+
+                <!-- <script>
+                    document.addEventListener('alpine:init', () => {
+                        Alpine.data('carousel', (carouselData = {
+                            slides: [],
+                        },) => ({
+                            slides: carouselData.slides,
+                            currentSlideIndex: 1,
+                            autoplayIntervalTime: 200,
+                            previous() {
+                                if (this.currentSlideIndex > 1) {
+                                    this.currentSlideIndex = this.currentSlideIndex - 1
+                                } else {
+                                    // If it's the first slide, go to the last slide           
+                                    this.currentSlideIndex = this.slides.length
+                                }
+                            },
+                            next() {
+                                if (this.currentSlideIndex < this.slides.length) {
+                                    this.currentSlideIndex = this.currentSlideIndex + 1
+                                } else {
+                                    // If it's the last slide, go to the first slide    
+                                    this.currentSlideIndex = 1
+                                }
+                            },
+                            autoplay() {
+                                this.autoplayInterval = setInterval(() => {
+                                    if (!this.isPaused) {
+                                        this.next()
+                                    }
+                                }, this.autoplayIntervalTime)
+                            }
+                        }))
+                    })
+                </script> -->
+
+            </div>
+
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
@@ -763,6 +862,7 @@
         let lastScroll = 0;
         const navbar = document.querySelector('nav');
         //const logoimg = document.querySelector('#logo');
+        const bookbtn = document.querySelector('#bookbtn');
 
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
@@ -772,11 +872,15 @@
                 navbar.classList.add('bg-transparent');
                 navbar.classList.remove('bg-ocean-50');
                 //logoimg.classList.add('shadow-lg');
+                bookbtn.classList.add('bg-almar');
+                bookbtn.classList.remove('bg-sunrise-400');
             } else {
                 navbar.classList.add('shadow-lg');
                 navbar.classList.remove('bg-transparent');
                 navbar.classList.add('bg-ocean-50');
                 //logoimg.classList.remove('shadow-lg');
+                bookbtn.classList.remove('bg-almar');
+                bookbtn.classList.add('bg-sunrise-400');
             }
 
             lastScroll = currentScroll;
