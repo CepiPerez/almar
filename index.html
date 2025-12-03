@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pousada Almar | Maragogi</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
     <!-- Social Meta Tags -->
     <meta property="og:title" content="Pousada Almar | Maragogi" />
     <meta property="og:description"
@@ -128,7 +133,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0">
-                    <img src="assets/images/translohoh.png" class="h-16" alt="Almar">
+                    <img src="assets/images/translohoh2.png" class="h-16" alt="Almar">
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <span class="text-almartext font-bold underline underline-offset-8">Home</span>
@@ -206,8 +211,8 @@
                     <template x-for="(slide, index) in slides">
                         <div x-show="currentSlideIndex == index + 1" class="absolute inset-0"
                             x-transition.opacity.duration.1000ms>
-                            <img class="absolute w-full h-full inset-0 object-cover text-on-surface dark:text-on-surface-dark"
-                                x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
+                            <img class="absolute w-full h-full inset-0 object-cover" x-bind:src="slide.imgSrc"
+                                x-bind:alt="slide.imgAlt" />
                         </div>
                     </template>
                 </div>
