@@ -135,7 +135,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0">
-                    <img src="assets/images/lohoh.png" class="rounded-md shadow-lg h-16" id="logo" alt="Almar">
+                    <img src="assets/images/translohoh.png" class="h-16" alt="Almar">
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <div class="hidden md:flex space-x-8">
@@ -375,7 +375,7 @@
         // Navbar scroll effect
         let lastScroll = 0;
         const navbar = document.querySelector('nav');
-        const logoimg = document.querySelector('#logo');
+        //const logoimg = document.querySelector('#logo');
 
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
@@ -384,12 +384,12 @@
                 navbar.classList.remove('shadow-lg');
                 navbar.classList.add('bg-transparent');
                 navbar.classList.remove('bg-ocean-50');
-                logoimg.classList.add('shadow-lg');
+                //logoimg.classList.add('shadow-lg');
             } else {
                 navbar.classList.add('shadow-lg');
                 navbar.classList.remove('bg-transparent');
                 navbar.classList.add('bg-ocean-50');
-                logoimg.classList.remove('shadow-lg');
+                //logoimg.classList.remove('shadow-lg');
             }
 
             lastScroll = currentScroll;
