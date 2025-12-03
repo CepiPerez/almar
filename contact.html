@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pousada Almar | Maragogi</title>
+
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Pousada Almar | Maragogi" />
+    <meta property="og:description"
+        content="Experience the beauty of Maragogi at our cozy beachfront inn. Comfortable rooms, delicious breakfast, and just 8 minutes walk to the beach." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ALMAR" />
+    <meta property="og:image"
+        content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be04p.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pousada Almar | Maragogi" />
+    <meta name="twitter:description"
+        content="Experience the beauty of Maragogi at our cozy beachfront inn. Comfortable rooms, delicious breakfast, and just 8 minutes walk to the beach." />
+    <meta name="twitter:image"
+        content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9be04p.jpg" />
+    <meta name="twitter:url" content="https://www.onspace.ai" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'almar': '#fdc82c',
+                        'almartext': '#163d42',
+                        'gradient1': '#195a79',
+                        'gradient2': '#283f49',
+                        'gradient3': '#ffa337',
+                        'ocean': {
+                            50: '#fdc82c',
+                            100: '#bae7ff',
+                            200: '#91d5ff',
+                            300: '#69c0ff',
+                            400: '#40a9ff',
+                            500: '#1890ff',
+                            600: '#0f7ae5',
+                            700: '#0958a5',
+                            800: '#003a8c',
+                            900: '#002766',
+                        },
+                        'sand': {
+                            50: '#fdf8f3',
+                            100: '#f8ede0',
+                            200: '#f0dcc4',
+                            300: '#e8caa8',
+                            400: '#deb887',
+                            500: '#d4a574',
+                            600: '#c49060',
+                            700: '#a67c52',
+                            800: '#8b6846',
+                            900: '#6f5239',
+                        },
+                        'sunrise': {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* color: #283f49 */
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgb(22, 61, 66, 0.5) 0%, rgb(253, 200, 44, 0.75) 100%);
+        }
+
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-section {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-almartext/80">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <img src="assets/images/lohoh.png" class="rounded-md shadow-lg h-16" id="logo" alt="Almar">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-almartext hover:text-ocean-600 transition-colors font-medium">Home</a>
+                    <a href="rooms.html"
+                        class="text-almartext hover:text-ocean-600 transition-colors font-medium">Quartos</a>
+                    <a href="location.html"
+                        class="text-almartext hover:text-ocean-600 transition-colors font-medium">Maragogi</a>
+                    <span class="text-almartext font-bold underline underline-offset-8">Contato</span>
+                </div>
+                <a href="#booking"
+                    class="bg-sunrise-500 hover:bg-sunrise-600 text-white px-4 md:px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-sm md:text-base">
+                    Reserva
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[75vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/images/heroimg.webp"
+                alt="Beautiful beach resort in Maragogi with palm trees and turquoise waters"
+                class="w-full h-25 object-cover" loading="eager" />
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <h4
+                class="font-display text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                Ficou Com Alguma Dúvida?
+            </h4>
+            <p
+                class="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 md:mb-12 leading-relaxed max-w-2xl mx-auto font-light">
+                Entre em contato conosco e garanta sua reserva ainda hoje!
+            </p>
+
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <!--  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div> -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-almartext mb-6">
+                        Contato
+                    </h2>
+                    <p class="text-almartext/60 text-lg leading-relaxed mb-8">
+                        Mande uma mensagem para nós preenchendo o formulário abaixo
+                        ou entre em contato por um de nossos outros canais oficiais
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-ocean-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-ocean-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-almartext/80 mb-1">Rua José Alvim Fontes, Maragogi
+                                    57955-000
+                                </h3>
+                                <p class="text-almartext/80">Maragogi, Alagoas, Brazil</p>
+                                <p class="text-sm text-almartext/70">8 minutes walk to the beach</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-ocean-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-ocean-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-almartext/80 mb-1">+558299648</h3>
+                                <p class="text-almartext/80">Entre em contato conosco para reservas</p>
+                                <p class="text-sm text-almartext/70">Recepção disponível 24 horas por dia, 7 dias por
+                                    semana
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-ocean-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-ocean-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-almartext/80 mb-1">Check-in / Check-out</h3>
+                                <p class="text-almartext/80">Check-in: 2:00 PM</p>
+                                <p class="text-almartext/80">Check-out: 12:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-almar/20 rounded-2xl p-8 md:p-10">
+                    <h3 class="font-display text-2xl md:text-3xl font-bold text-almartext mb-6">
+                        Envie-nos uma mensagem
+                    </h3>
+                    <form class="space-y-4" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-medium text-almartext/70 mb-2">Nome</label>
+                            <input type="text" required=""
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ocean-500 focus:border-transparent outline-none transition-all" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-almartext/70 mb-2">E-mail</label>
+                            <input type="email" required=""
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ocean-500 focus:border-transparent outline-none transition-all" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-almartext/70 mb-2">Mensagem</label>
+                            <textarea rows="4" required=""
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ocean-500 focus:border-transparent outline-none transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-ocean-600 hover:bg-ocean-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA Section -->
+    <section id="booking" class="py-16 md:py-24 bg-gradient-to-br from-gradient1 via-gradient1 to-gradient3">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-3xl md:text-4xl lg:text-4xl font-bold text-white mb-6">
+                Pronto para sua aventura em Maragogi?
+            </h2>
+            <p class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+                Reserve já a sua estadia e desfrute do calor e da beleza de Almar
+            </p>
+            <a href="https://www.booking.com/searchresults.es.html?aid=318615&label=Portuguese_Brazil_PT_BR_27123297025-ytsozDt2D2ZS0B9E2l%2Aw3gSM217288669111%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55850326803%3Atidsa-355815316927%3Alp1031795%3Ali%3Adem%3Adm-Share-s4kINrf%401763830336&no_rooms=1&highlighted_hotels=15279586&redirected=1&city=-653685&hlrd=no_dates&group_adults=2&source=hotel&group_children=0&expand_sb=1&keep_landing=1&sid=5db33f0d1ebc2844d945eb8fc1db34ee"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-block bg-white text-almartext px-10 py-4 rounded-full text-lg font-bold hover:bg-sand-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                Verifique a disponibilidade agora
+            </a>
+            <p class="mt-6 text-white/80 text-sm">
+                Tem alguma dúvida? Entre em contato conosco diretamente para obter assistência imediata.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-almar text-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center">
+                <div>
+                    <h3
+                        class="justify-center font-display text-2xl text-almartext font-bold mb-4 flex items-center gap-2">
+                        <img src="assets/images/logosmall.png" alt="Almar" style="height: 26px;">
+                        Almar
+                    </h3>
+                    <div class="justify-center mx-12">
+                        <p class="text-almartext/80 leading-relaxed">
+                            Sua casa longe de casa na bela Maragogi, onde cada nascer do sol traz novas aventuras.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-almartext text-lg mb-4">Links rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-almartext/80 hover:text-almartext transition-colors">Home</a></li>
+                        <li><a href="rooms.html"
+                                class="text-almartext/80 hover:text-almartext transition-colors">Quartos</a></li>
+                        <li><a href="location.html"
+                                class="text-almartext/80 hover:text-almartext transition-colors">Maragogi</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="text-almartext/80 hover:text-almartext transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 text-almartext">Mídias sociais</h4>
+                    <div class="flex gap-4 justify-center">
+                        <!-- <a href="#" target="_blank"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a> -->
+                        <a href="https://www.instagram.com/almarmaragogipousada?igsh=MWw3YXhnZXh2eHRtbg=="
+                            target="_blank"
+                            class="w-10 h-10 rounded-full flex items-center justify-center bg-sunrise-500/30 hover:bg-sunrise-500/50 transition-colors">
+                            <i class="fab fa-instagram text-almartext"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?l=pt_BR&phone=558299648" target="_blank"
+                            class="w-10 h-10 rounded-full flex items-center justify-center bg-sunrise-500/30 hover:bg-sunrise-500/50 transition-colors">
+                            <i class="fab fa-whatsapp text-almartext"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-almartext/40 pt-4 text-center text-almartext/80 text-sm">
+                <p>© 2025 Pousada Almar. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+        const logoimg = document.querySelector('#logo');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-ocean-50');
+                logoimg.classList.add('shadow-lg');
+            } else {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-ocean-50');
+                logoimg.classList.remove('shadow-lg');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+
+
+</body>
+
+</html>
