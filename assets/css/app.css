@@ -1,0 +1,25 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /* color: #283f49 */
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(175deg, rgb(253, 200, 44, 0.75) 0%, rgb(22, 61, 66, 0.5) 100%)
+}
+
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll;
+    }
+}
