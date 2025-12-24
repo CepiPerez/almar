@@ -22,19 +22,23 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <?php foreach ($language['rooms']['rooms'] as $index => $room): ?>
 
-                <div
-                    class="bg-sand-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div class="relative h-64 md:h-80 overflow-hidden" x-data="{ images: [
-                            './assets/images/location1.jpg',
-                            './assets/images/location2.jpg',
-                            './assets/images/location3.jpg',
-                            ] }" x-init="$lightbox(images, 'rooms')">
+                <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
 
-                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&amp;q=80"
-                            alt="Standard double room with comfortable bed and modern decor"
+                    <!-- GALERIA -->
+                    <div class="relative h-64 md:h-80 overflow-hidden" x-data="{ images: [
+                        <?php foreach ($config['room_images'][$index] as $image): ?>
+                            './assets/images/<?php echo ($image); ?>',
+                        <?php endforeach; ?>
+                        ] }" x-init="$lightbox(images, 'rooms<?php echo ($index); ?>')">
+
+                        <img src="../assets/images/<?php echo ($config['room_images'][$index][0]); ?>"
+                            alt="<?php echo ($room['title'][$current_language]); ?>"
                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                            @click="$lightbox.open(images[0], 'rooms<?php echo ($index); ?>')"
                             loading="lazy" />
                     </div>
+
+                    <!-- TARJETA -->
                     <div class="p-6 md:p-8">
                         <h3 class="font-display text-2xl md:text-3xl font-bold text-almartext mb-4">
                             <?php echo ($room['title'][$current_language]); ?>

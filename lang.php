@@ -5,7 +5,7 @@ $language = [
     // TEXTO PARA LA CABECERA, SE USA SOLAMENTE EN LOS BUSCADORES COMO GOOGLE
     "head" => [
         "meta_description" => [
-            "pt" => "proveite o melhor de Maragogi na Pousada Almar. Quartos confortáveis, 
+            "pt" => "Proveite o melhor de Maragogi na Pousada Almar. Quartos confortáveis, 
                     café da manhã delicioso e a apenas 8 minutos da praia.",
             "es" => "Disfrutá Maragogi en la Pousada Almar. Habitaciones confortables, 
                     desayuno delicioso y a solo 8 minutos de la playa.",
@@ -19,10 +19,15 @@ $language = [
 
         // BOTONES DE LA BARRA
         "menu" => [
-            "index" => [
+            "home" => [
                 "pt" => "Home",
                 "es" => "Inicio",
                 "en" => "Home"
+            ],
+            "gallery" => [
+                "pt" => "Galeria",
+                "es" => "Galeria",
+                "en" => "Gallery",
             ],
             "rooms" => [
                 "pt" => "Quartos",
@@ -101,24 +106,24 @@ $language = [
 
         // TARJETA 2
         "card_2_title" => [
-            "pt" => "Café da manhã",
-            "es" => "Desayuno",
-            "en" => "Breakfast",
+            "pt" => "Instalações",
+            "es" => "Instalaciones",
+            "en" => "Facilities",
         ],
         "card_2_text" => [
-            "pt" => "Comece o seu dia com um delicioso café da manhã preparado especialmente para você. 
-                    Fresco, energizante e repleto de sabores locais para abastecer suas aventuras em Maragogi.",
-            "es" => "Empieza el día con un delicioso desayuno preparado especialmente para ti. Fresco, energizante y 
-                    lleno de sabores locales para impulsar tus aventuras en Maragogi.",
-            "en" => "Start your day with a delicious breakfast prepared especially for you. Fresh, energizing, 
-                    and full of local flavors to fuel your adventures in Maragogi.",
+            "pt" => "Aproveite nossas instalações pensadas para o seu conforto e descanso.
+                    Ambientes acolhedores, áreas comuns agradáveis e tudo o que você precisa para relaxar em Maragogi.",
+            "es" => "Disfrutá de nuestras instalaciones pensadas para tu comodidad y descanso.
+                    Espacios acogedores, áreas comunes agradables y todo lo necesario para relajarte en Maragogi.",
+            "en" => "Enjoy our facilities designed for your comfort and relaxation.
+                    Cozy spaces, pleasant common areas, and everything you need to unwind in Maragogi."
         ],
         "card_2_button" => [
-            "pt" => "Ver menu",
-            "es" => "Ver menú",
-            "en" => "See menu",
+            "pt" => "Ver galeria",
+            "es" => "Ver galería",
+            "en" => "View gallery",
         ],
-        "card_2_link" => "#services",
+        "card_2_link" => "gallery",
 
         // TARJETA 3
         "card_3_title" => [
@@ -139,7 +144,7 @@ $language = [
             "es" => "Explorar la zona",
             "en" => "Explore the area",
         ],
-        "card_3_link" => "location",
+        "card_3_link" => "maragogi",
 
         // SECCION QUE CONTIENE EL MAPA DE UBICACION
         "location_title" => [
@@ -330,11 +335,11 @@ $language = [
             "en" => "The comfort you deserve, just steps from the beach."
         ],
         "header" => [
-            "pt" => "A Pousada Sol da Manhã possui diversas opções de quartos,
+            "pt" => "A Pousada Almar possui diversas opções de quartos,
                     todos plenamente equipados para tornar sua estadia conosco inesquecível!",
-            "es" => "La Pousada Sol da Manhã ofrece una variedad de opciones de habitaciones, 
+            "es" => "La Posada Almar ofrece una variedad de opciones de habitaciones, 
                     todas completamente equipadas para que su estancia sea inolvidable.",
-            "en" => "Pousada Sol da Manhã offers a variety of room options,
+            "en" => "Almar Guesthouse offers a variety of room options,
                     all fully equipped to make your stay with us unforgettable!"
         ],
         "check" => [
@@ -360,6 +365,18 @@ $language = [
             ],
             2 => [
                 "title" => [
+                    "pt" => "Quarto duplo padrão",
+                    "es" => "Habitación doble estándar",
+                    "en" => "Standard double room"
+                ],
+                "description" => [
+                    "pt" => "1 cama de casal",
+                    "es" => "1 cama doble",
+                    "en" => "1 double bed"
+                ]
+            ],
+            3 => [
+                "title" => [
                     "pt" => "Quarto triplo",
                     "es" => "Habitación triple",
                     "en" => "Triple room"
@@ -370,7 +387,7 @@ $language = [
                     "en" => "1 double bed - 1 single bed"
                 ]
             ],
-            3 => [
+            4 => [
                 "title" => [
                     "pt" => "Quarto triplo",
                     "es" => "Habitación triple",
@@ -382,7 +399,7 @@ $language = [
                     "en" => "3 single beds"
                 ]
             ],
-            4 => [
+            5 => [
                 "title" => [
                     "pt" => "Quarto quádruplo",
                     "es" => "Habitación cuádruple",
@@ -429,6 +446,20 @@ $language = [
                 "es" => "Sala de estar",
                 "en" => "Living room",
             ]
+        ]
+    ],
+
+    // TEXTOS DE LA PAGINA DE HABITACIONES
+    "gallery" => [
+        "slider_title" => [
+            "pt" => "Galeria de fotos",
+            "es" => "Galería de fotos",
+            "en" => "Photo gallery"
+        ],
+        "slider_text" => [
+            "pt" => "Descubra nossas instalações",
+            "es" => "Descubra nuestras instalaciones",
+            "en" => "Discover our facilities"
         ]
     ],
 
@@ -503,8 +534,6 @@ $language = [
             "en" => "Send message"
         ]
     ],
-
-
 
     // TEXTOS PARA LA PAGINA DE MARAGOGI
     "maragogi" => [
@@ -628,6 +657,11 @@ $language = [
             "pt" => "Home",
             "es" => "Inicio",
             "en" => "Home"
+        ],
+        "quick_links_gallery" => [
+            "pt" => "Galeria",
+            "es" => "Galería",
+            "en" => "Gallery"
         ],
         "quick_links_rooms" => [
             "pt" => "Quartos",

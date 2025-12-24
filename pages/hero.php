@@ -86,7 +86,7 @@
             <?php endif; ?>
             <?php if (isset($hero_params['slider_button_2'])): ?>
                 <a class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-almartext transition-all duration-300 w-full sm:w-auto"
-                    href="rooms.html">
+                    href="<?php echo (traducirRuta('rooms', $current_language)); ?>">
                     <?php echo ($hero_params['slider_button_2']); ?>
                 </a>
             <?php endif; ?>

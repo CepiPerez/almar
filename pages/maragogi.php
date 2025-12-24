@@ -38,7 +38,7 @@
                     <?php echo ($language['maragogi']['card_3_title'][$current_language]); ?>
                 </h3>
                 <p class="text-white/80 text-sm">
-                    <?php echo ($language['maragogi']['card_2_subtitle'][$current_language]); ?>
+                    <?php echo ($language['maragogi']['card_3_subtitle'][$current_language]); ?>
                 </p>
             </div>
         </div>

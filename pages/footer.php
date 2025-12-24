@@ -19,25 +19,15 @@
                     <?php echo ($language['footer']['quick_links'][$current_language]); ?>
                 </h4>
                 <ul class="space-y-2">
-                    <li>
-                        <a class="text-almartext/80 hover:text-almartext transition-colors" href="/">
-                            <?php echo ($language['footer']['quick_links_home'][$current_language]); ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-almartext/80 hover:text-almartext transition-colors" href="rooms">
-                            <?php echo ($language['footer']['quick_links_rooms'][$current_language]); ?>
-                        </a>
-                    </li>
-                    <li><a class="text-almartext/80 hover:text-almartext transition-colors" href="maragogi">
-                            <?php echo ($language['footer']['quick_links_maragogi'][$current_language]); ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-almartext/80 hover:text-almartext transition-colors" href="contact">
-                            <?php echo ($language['footer']['quick_links_contact'][$current_language]); ?>
-                        </a>
-                    </li>
+                    <?php foreach ($language['navbar']['menu'] as $key => $val): ?>
+                        <li>
+                            <a href="<?php echo ($key == 'home' ? '/' : strtolower($val[$current_language])); ?>"
+                                class="hover:text-almartext transition-colors
+                                <?php echo ($key == $ruta ? 'pointer-events-none text-almartext' : 'text-almartext/80 ');  ?>">
+                                <?php echo ($val[$current_language]) ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div>
@@ -64,9 +54,17 @@
 
         <div class="border-t border-almartext/40 py-4 flex gap-1 justify-center text-almartext/80 text-sm">
             <p class="pe-4"><?php echo ($language['footer']['language'][$current_language]); ?></p>
-            <a class="block px-3 text-left hover:text-almartext" href="set_language.php?lang=pt">Portugues</a>
-            <a class="block px-3 text-left hover:text-almartext" href="set_language.php?lang=es">Español</a>
-            <a class="block px-3 text-left hover:text-almartext" href="set_language.php?lang=en">English</a>
+
+            <?php foreach (['pt' => 'Português', 'es' => 'Español', 'en' => 'English'] as $lang => $text): ?>
+
+                <a class="flex px-3 text-left hover:text-almartext
+                    <?php echo ($lang == $current_language ? 'pointer-events-none text-almartext' : '');  ?>"
+                    href="set_language.php?lang=<?php echo ($lang . ($ruta != 'home' ? '&page=' . traducirRuta($ruta, $lang) : '')); ?>">
+                    <img src="/assets/flags/<?php echo ($lang); ?>.png" alt="<?php echo ($text); ?>" style="height: 18px; margin: 1px 8px 0 0;">
+                    <?php echo ($text); ?>
+                </a>
+            <?php endforeach; ?>
+
         </div>
 
         <div class="border-t border-almartext/40 pt-4 text-center text-almartext/80 text-sm">

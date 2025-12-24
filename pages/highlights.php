@@ -9,7 +9,7 @@
                 <div
                     class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/card<?php echo ($i); ?>.jpg"
+                        <img src="assets/images/card_<?php echo ($i); ?>.jpg"
                             alt="Comfortable hotel room with modern amenities and ocean view"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             loading="lazy" />
@@ -25,7 +25,7 @@
                             <?php echo ($language['home']['card_' . $i . '_text'][$current_language]); ?>
                         </p>
                         <a class="inline-flex items-center text-almartext/70 hover:text-almartext font-semibold transition-colors"
-                            href="<?php echo ($language['home']['card_' . $i . '_link']); ?>">
+                            href="<?php echo (traducirRuta($language['home']['card_' . $i . '_link'], $current_language)); ?>">
                             <?php echo ($language['home']['card_' . $i . '_button'][$current_language]); ?> <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>

@@ -11,6 +11,8 @@ tailwind.config = {
                 'gradient1': '#195a79',
                 'gradient2': '#283f49',
                 'gradient3': '#ffa337',
+                'booking': '#57b4ac',
+                'booking-h': '#163d42',
                 'ocean': {
                     50: '#fdc82c',
                     100: '#bae7ff',

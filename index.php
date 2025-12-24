@@ -2,11 +2,47 @@
 <html lang="en">
 
 <?php
-$ruta = $_GET['ruta'] ?? 'index';
+function traducirRuta($ruta, $to_lang)
+{
+    global $language;
+
+    foreach ($language['navbar']['menu'] as $key => $val) {
+        if ($key == $ruta) {
+            return strtolower($val[$to_lang]);
+        }
+    }
+
+    return $ruta;
+}
+
+$site_url = 'https://almar.free.nf/';
 
 require('config.php');
 require('lang.php');
+
+// Configuramos el idioma
+$default_language = 'pt';
+$current_language = $default_language;
+
+// Comprueba si la cookie 'user_language' está establecida y usa su valor
+if (isset($_COOKIE['user_language'])) {
+    $current_language = $_COOKIE['user_language'];
+}
+
+// Obtenemos la ruta desde la URL
+$ruta_traducida = $_GET['ruta'] ?? 'home';
+$ruta = $ruta_traducida;
+
+// Convertimos la ruta que está en un idioma al valor real
+foreach ($language['navbar']['menu'] as $key => $val) {
+    if (strtolower($val[$current_language]) == $ruta) {
+        $ruta = $key;
+        break;
+    }
+}
+
 include('pages/head.php');
+
 
 ?>
 
@@ -23,7 +59,7 @@ include('pages/head.php');
 
                 <div class="hidden md:flex space-x-8">
                     <?php foreach ($language['navbar']['menu'] as $key => $val): ?>
-                        <a href="<?php echo ($key); ?>" class="text-almartext hover:text-ocean-600 transition-colors 
+                        <a href="<?php echo ($key == 'home' ? '/' : strtolower($val[$current_language])); ?>" class="text-almartext hover:text-ocean-600 transition-colors 
                             <?php echo ($key == $ruta ? 'pointer-events-none font-bold underline underline-offset-8' : 'font-medium'); ?>">
                             <?php echo ($val[$current_language]) ?>
                         </a>
@@ -31,7 +67,7 @@ include('pages/head.php');
                 </div>
 
                 <a href="#booking" id="bookbtn"
-                    class="bg-almar hover:bg-sunrise-600 text-white px-4 md:px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-sm md:text-base">
+                    class="bg-booking hover:bg-booking-h text-white px-4 md:px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-sm md:text-base">
                     <?php echo ($language['navbar']['reserve'][$current_language]); ?>
                 </a>
             </div>
@@ -40,15 +76,15 @@ include('pages/head.php');
 
 
     <!-- MODULOS PAGINA INICIO -->
-    <?php if ($ruta == 'index') {
+    <?php if ($ruta == 'home') {
         $hero_params = [
             'height' => ($config['hero']['height']['home'] ? 'h-screen' : 'h-[' . $config['hero']['height']['home'] . 'vh]'),
             'images' => $config['hero']['images']['home'],
             'scroll' => $config['hero']['scroll']['home'],
             'title' => $language['home']['slider_title'][$current_language],
             'subtitle' => $language['home']['slider_text'][$current_language],
-            'slider_button_1' => $language['home']['slider_button_1'][$current_language],
-            'slider_button_2' => $language['home']['slider_button_2'][$current_language]
+            'slider_button_1' => isset($language['home']['slider_button_1']) ? $language['home']['slider_button_1'][$current_language] : null,
+            'slider_button_2' => isset($language['home']['slider_button_2']) ? $language['home']['slider_button_2'][$current_language] : null,
         ];
 
         include('pages/hero.php');
@@ -75,6 +111,26 @@ include('pages/head.php');
         include('pages/booking.php');
     } ?>
 
+    <!-- MODULOS PAGINA GALERIA -->
+    <?php if ($ruta == 'gallery') {
+        $hero_params = [
+            'height' => ($config['hero']['height']['gallery'] == 100 ? 'h-screen' : 'h-[' . $config['hero']['height']['gallery'] . 'vh]'),
+            'images' => $config['hero']['images']['gallery'],
+            'scroll' => $config['hero']['scroll']['gallery'],
+            'title' => $language['gallery']['slider_title'][$current_language],
+            'subtitle' => $language['gallery']['slider_text'][$current_language],
+            'slider_button_1' => isset($language['gallery']['slider_button_1']) ? $language['gallery']['slider_button_1'][$current_language] : null,
+            'slider_button_2' => isset($language['gallery']['slider_button_2']) ? $language['gallery']['slider_button_2'][$current_language] : null,
+        ];
+
+        $gallery_pictures = $config['gallery_images'];
+
+        include('pages/hero.php');
+        include('pages/imagegallery.php');
+        include('pages/services.php');
+        include('pages/booking.php');
+    } ?>
+
     <!-- MODULOS PAGINA MARAGOGI -->
     <?php if ($ruta == 'maragogi') {
         $hero_params = [
@@ -87,9 +143,11 @@ include('pages/head.php');
             'slider_button_2' => isset($language['rooms']['slider_button_2']) ? $language['maragogi']['slider_button_2'][$current_language] : null,
         ];
 
+        $gallery_pictures = $config['maragogi_images'];
+
         include('pages/hero.php');
         include('pages/maragogi.php');
-        include('pages/gallery.php');
+        include('pages/imagegallery.php');
         include('pages/booking.php');
     } ?>
 
@@ -153,15 +211,15 @@ include('pages/head.php');
                 navbar.classList.add('bg-transparent');
                 navbar.classList.remove('bg-ocean-50');
                 //logoimg.classList.add('shadow-lg');
-                bookbtn.classList.add('bg-almar');
-                bookbtn.classList.remove('bg-sunrise-400');
+                //bookbtn.classList.add('bg-almar');
+                //bookbtn.classList.remove('bg-sunrise-400');
             } else {
                 navbar.classList.add('shadow-lg');
                 navbar.classList.remove('bg-transparent');
                 navbar.classList.add('bg-ocean-50');
                 //logoimg.classList.remove('shadow-lg');
-                bookbtn.classList.remove('bg-almar');
-                bookbtn.classList.add('bg-sunrise-400');
+                //bookbtn.classList.remove('bg-almar');
+                //bookbtn.classList.add('bg-sunrise-400');
             }
 
             lastScroll = currentScroll;
