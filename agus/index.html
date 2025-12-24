@@ -7,7 +7,7 @@
     <title>Agustina</title>
 
     <!-- Tailwind config file -->
-    <script src="../assets/js/tailwind.config.js?v=<?php echo (date('Ymdhis')); ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Lightbox Plugin -->
     <script defer
@@ -18,168 +18,235 @@
 
     <!-- AlpineJS Core -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let pagina = parseInt(urlParams.get('pagina')) || 1;
+
+        window.galerias = {
+            1: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116_IMG_2441.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116_IMG_2441.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2273.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2273.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2276.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2276.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2278.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2278.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2280.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2280.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2299.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2299.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2300.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2300.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2301.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2301.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2302.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2302.jpg' },
+            ],
+            2: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2303.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2303.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2304.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2304.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2305.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2305.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2306.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2306.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2307.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2307.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2308.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2308.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2309.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2309.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2310.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2310.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2311.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2311.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2312.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2312.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2313.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2313.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2314.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2314.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2315.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2315.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2316.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2316.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2317.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2317.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2318.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2318.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2319.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2319.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2321.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2321.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2322.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2322.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2323.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2323.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2324.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2324.jpg' },
+            ],
+            3: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2325.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2325.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2326.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2326.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2327.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2327.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2328.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2328.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2329.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2329.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2330.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2330.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2331.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2331.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2332.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2332.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2333.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2333.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2334.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2334.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2335.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2335.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2336.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2336.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2337.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2337.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2338.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2338.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2339.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2339.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2340.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2340.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2341.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2341.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2342.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2342.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2343.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2343.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2344.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2344.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2345.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2345.jpg' },
+            ],
+            4: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2346.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2346.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2347.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2347.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2348.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2348.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2349.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2349.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2350.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2350.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2351.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2351.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2352.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2352.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2353.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2353.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2354.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2354.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2355.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2355.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2356.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2356.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2357.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2357.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2358.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2358.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2359.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2359.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2361.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2361.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2362.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2362.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2364.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2364.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2365.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2365.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2366.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2366.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2367.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2367.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2368.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2368.jpg' },
+            ],
+            5: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2369.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2369.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2370.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2370.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2371.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2371.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2372.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2372.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2373.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2373.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2374.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2374.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2376.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2376.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2377.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2377.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2378.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2378.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2379.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2379.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2380.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2380.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2381.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2381.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2382.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2382.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2383.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2383.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2384.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2384.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2385.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2385.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2386.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2386.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2387.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2387.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2388.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2388.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2389.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2389.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2390.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2390.jpg' },
+            ],
+            6: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2391.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2391.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2392.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2392.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2393.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2393.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2394.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2394.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2395.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2395.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2396.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2396.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2397.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2397.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2399.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2399.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2400.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2400.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2401.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2401.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2402.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2402.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2403.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2403.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2404.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2404.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2405.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2405.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2406.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2406.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2407.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2407.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2408.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2408.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2409.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2409.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2411.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2411.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2412.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2412.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2413.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2413.jpg' },
+            ],
+            7: [
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2414.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2414.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2416.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2416.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2419.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2419.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2420.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2420.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2421.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2421.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2422.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2422.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2423.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2423.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2424.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2424.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2425.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2425.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2426.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2426.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2427.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2427.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2428.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2428.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2429.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2429.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2430.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2430.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2431.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2431.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2432.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2432.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2433.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2433.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2434.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2434.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2435.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2435.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2436.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2436.jpg' },
+                { url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2437.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2437.jpg' },
+            ]
+        };
+
+    </script>
+
+
+
 </head>
 
 <body>
+    <div class="mb-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
+            Colación Agustina
+        </h1>
+        <div class="mt-2 mx-auto w-24 h-1 bg-blue-600 rounded"></div>
+    </div>
+
+    <div class="flex justify-center mt-10" x-data="{
+            paginaActual: pagina,
+            totalPaginas: 7,
+            ir(p) {
+                const url = new URL(window.location);
+                url.searchParams.set('pagina', p);
+                window.location = url;
+            }
+        }">
+        <nav class="inline-flex items-center gap-1">
+            <!-- Anterior -->
+            <button @click="ir(paginaActual - 1)" :disabled="paginaActual === 1" class="px-3 py-2 rounded border text-sm
+                   disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed
+                   hover:bg-gray-100">
+                ‹
+            </button>
+
+            <!-- Números -->
+            <template x-for="p in totalPaginas" :key="p">
+                <button @click="ir(p)" x-text="p" class="px-3 py-2 rounded border text-sm min-w-[40px] cursor-pointer"
+                    :class="p === paginaActual
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'hover:bg-gray-100'"></button>
+            </template>
+
+            <!-- Siguiente -->
+            <button @click="ir(paginaActual + 1)" :disabled="paginaActual === totalPaginas" class="px-3 py-2 rounded border text-sm
+                   disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed
+                   hover:bg-gray-100">
+                ›
+            </button>
+        </nav>
+    </div>
+
     <section id="pictures" class="py-16 md:py-24 bg-sand-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6" x-data="{
-                    images: [
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116_IMG_2441.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116_IMG_2441.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2273.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2273.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2276.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2276.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2278.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2278.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2280.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2280.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2282.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2285.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2297.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2298.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2299.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2299.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2300.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2300.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2301.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2301.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2302.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2302.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2303.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2303.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2304.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2304.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2305.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2305.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2306.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2306.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2307.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2307.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2308.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2308.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2309.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2309.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2310.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2310.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2311.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2311.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2312.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2312.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2313.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2313.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2314.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2314.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2315.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2315.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2316.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2316.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2317.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2317.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2318.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2318.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2319.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2319.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2321.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2321.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2322.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2322.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2323.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2323.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2324.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2324.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2325.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2325.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2326.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2326.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2327.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2327.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2328.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2328.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2329.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2329.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2330.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2330.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2331.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2331.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2332.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2332.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2333.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2333.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2334.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2334.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2335.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2335.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2336.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2336.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2337.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2337.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2338.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2338.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2339.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2339.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2340.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2340.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2341.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2341.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2342.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2342.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2343.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2343.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2344.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2344.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2345.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2345.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2346.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2346.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2347.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2347.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2348.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2348.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2349.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2349.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2350.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2350.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2351.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2351.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2352.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2352.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2353.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2353.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2354.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2354.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2355.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2355.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2356.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2356.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2357.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2357.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2358.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2358.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2359.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2359.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2361.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2361.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2362.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2362.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2364.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2364.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2365.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2365.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2366.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2366.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2367.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2367.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2368.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2368.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2369.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2369.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2370.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2370.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2371.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2371.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2372.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2372.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2373.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2373.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2374.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2374.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2376.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2376.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2377.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2377.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2378.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2378.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2379.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2379.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2380.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2380.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2381.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2381.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2382.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2382.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2383.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2383.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2384.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2384.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2385.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2385.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2386.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2386.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2387.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2387.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2388.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2388.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2389.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2389.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2390.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2390.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2391.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2391.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2392.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2392.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2393.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2393.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2394.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2394.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2395.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2395.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2396.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2396.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2397.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2397.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2399.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2399.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2400.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2400.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2401.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2401.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2402.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2402.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2403.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2403.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2404.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2404.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2405.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2405.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2406.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2406.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2407.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2407.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2408.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2408.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2409.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2409.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2411.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2411.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2412.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2412.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2413.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2413.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2414.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2414.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2416.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2416.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2419.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2419.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2420.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2420.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2421.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2421.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2422.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2422.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2423.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2423.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2424.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2424.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2425.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2425.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2426.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2426.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2427.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2427.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2428.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2428.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2429.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2429.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2430.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2430.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2431.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2431.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2432.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2432.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2433.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2433.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2434.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2434.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2435.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2435.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2436.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2436.jpg' },
-                        {url: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2437.jpg', thumb: 'https://graduados.unlam.edu.ar/upload/imagenes/galeria/G116__MG_2437.jpg' },
-                    ]
+                    images: window.galerias[pagina]
                 }">
 
                 <template x-for="image in images">
                     <div class="overflow-hidden flex rounded-md shadow-lg ">
                         <a href="#" class="overflow-hidden hover:scale-110 transition-transform duration-500"
                             x-lightbox="image.url" x-lightbox:group="multiple">
-                            <img class="flex-1 aspect-[4/3] object-cover object-center" :src="image.thumb" alt="">
+                            <img class="flex-1 aspect-[4/3] object-cover object-center" :src="image.thumb"
+                                loading="lazy">
                         </a>
                     </div>
                 </template>
@@ -188,6 +255,7 @@
 
         </div>
     </section>
+
 
 
 </body>
